@@ -1,43 +1,33 @@
 
 const buttonElement = document.querySelector('#addtrans');
+let expendListElement = document.querySelector('#historial');
+
+function saveExpense(expense) {
+    let expenseElement = ` <p>${expense.concept} ${expense.quantity} </p> `;
+    let expenseTag = document.createElement("p");
+    expenseTag.innerHTML = expenseElement;
+    expendListElement.appendChild(expenseTag);
+}
 
 // añadir listener al evento click del botón
-buttonElement.addEventListener("click", () => {
-  
+buttonElement.addEventListener("click", (event) => {
+  event.preventDefault()
   // accedemos al DOM para buscar el input
   const inputConcept = document.querySelector('#concept');
   const inputQuantity = document.querySelector("#quantity");
+
   // guardamos el valor en localStorage
-  localStorage.setItem("savedText", inputConcept.value);
-  localStorage.setItem("savedCant", inputQuantity.value);
+  //localStorage.setItem("savedText", inputConcept.value);
+  //localStorage.setItem("savedCant", inputQuantity.value);
 
+  let expense = {
+    concept: inputConcept.value,
+    quantity: inputQuantity.value
+  };
 
-  // accedemos al DOM para buscar el párrafo
-  const paragraphElementC = document.querySelector('#conceptHist');
-  const paragraphElementQ = document.querySelector('#quantitytHist');
-  
-  // escribimos el texto que se ha introducido en el input dentro del parrafo
-  paragraphElementC.textContent = inputConcept.value;
-  paragraphElementQ.textContent = inputQuantity.value;
+  saveExpense(expense);
 
   // borrar lo que hay escrito en el input
-  // inputConcept.value = "";
-  // inputQuantity.value = "";
-})
-
-
-const textFromLocalStorageC = localStorage.getItem("savedText")
-
-if (textFromLocalStorageC !== null) {
-  const paragraphElementC = document.querySelector('#conceptHist');
-  paragraphElementC.textContent = textFromLocalStorageC;
-}
-
-const textFromLocalStorageQ = localStorage.getItem("savedCant")
-
-if (textFromLocalStorageQ !== null) {
-  const paragraphElementQ = document.querySelector('#quantityHist');
-  paragraphElementQ.textContent = textFromLocalStorageQ;
-}
-
-
+  inputConcept.value = "";
+  inputQuantity.value = "";
+});
