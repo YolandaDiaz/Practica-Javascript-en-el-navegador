@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Js en el navegador: Control de Gastos</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>CONTROL DE GASTOS</h1>
+    </header>
+    <div>
+    <h2>Tu ahorro:</h2>
+
+    </div>
+    <div>
+        <div>
+        <li>Ingresos</li>
+
+        </div>
+        <div>
+        <li>Gastos</li>
+
+        </div>
+    </div>
+
+    <h3>Historial</h3>
+    <hr>
+    <section>
+
+    </section>
+    
+    <h3>Añadir nueva transacción</h3>
+    <hr>
+    <form action="" method="get" novalidate>
+        <ul class="InputForm">
+            <label for="concept" class="formTag">Concepto</label>
+            <input required id="concept" name="concept" type="text" placeholder="Añade el concepto...">
+        </ul>
+        <ul class="InputForm">
+            <label for="quantity" class="formTag" >Cantidad</label>
+            <div>(Negativo: gasto, positivo: ingreso)</div>
+            <input required id="quantity" name="quantity" type="number" placeholder="Introduce la cantidad..." >
+        </ul>
+        <button type="submit">Añadir transacción</button>
+    </form>
+    <script src="./index.js"></script>
+    
+</body>
+</html>
