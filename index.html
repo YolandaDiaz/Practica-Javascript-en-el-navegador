@@ -10,32 +10,41 @@
 </head>
 <body>
     <header>
-        <h1>CONTROL DE GASTOS</h1>
+        <h1>Control De Gastos</h1>
     </header>
     <div>
-    <h2>Tu ahorro:</h2>
+    <h2>TU AHORRO:</h2>
+    <section>
 
+    </section>
     </div>
     <div>
         <div>
-        <li>Ingresos</li>
+        <ol>Ingresos</ol>
+        <section>
 
+        </section>
         </div>
-        <div>
-        <li>Gastos</li>
 
+        <div>
+        <ol>Gastos</ol>
+        <section>
+
+        </section>
         </div>
     </div>
 
     <h3>Historial</h3>
     <hr>
-    <section>
+    <section id="historial">
+        <div id="conceptHist"></div>
+        <div id="quantityHist"></div>
 
     </section>
     
     <h3>Añadir nueva transacción</h3>
     <hr>
-    <form action="" method="get" novalidate>
+    <form  novalidate>
         <ul class="InputForm">
             <label for="concept" class="formTag">Concepto</label>
             <input required id="concept" name="concept" type="text" placeholder="Añade el concepto...">
@@ -43,9 +52,9 @@
         <ul class="InputForm">
             <label for="quantity" class="formTag" >Cantidad</label>
             <div>(Negativo: gasto, positivo: ingreso)</div>
-            <input required id="quantity" name="quantity" type="number" placeholder="Introduce la cantidad..." >
+            <input required id="quantity" name="quantity" type="number" step="0.01" placeholder="Introduce la cantidad..." >
         </ul>
-        <button type="submit">Añadir transacción</button>
+        <button id="addtrans" type="submit">Añadir transacción</button>
     </form>
     <script src="./index.js"></script>
     
