@@ -6,8 +6,8 @@ let expendListElement = document.querySelector('#register');
 let incomeElement = document.querySelector('#income');
 let expensesElement = document.querySelector('#expenses');
 let totalElement = document.querySelector('#total');
-let positivos = 0;
-let negativos = 0;
+let positive = 0;
+let negative = 0;
 let total = 0;
 
 function saveRegister(expense) {
@@ -24,22 +24,21 @@ function saveRegister(expense) {
 }
 
 function saveEntry(expense) {
-  let cantidad = parseFloat(expense.quantity);
-  total = total + cantidad;
-  totalElement.innerHTML = (total);
-  if (cantidad >= 0) {
-    positivos = positivos + cantidad;
-    incomeElement.innerHTML = (positivos)
-  } else {
-    negativos = negativos + cantidad;
-    expensesElement.innerHTML = (negativos)
-  }
+  let cant = parseFloat(expense.quantity);
+  if (cant >= 0) {
+    positive = positive + cant;
+    incomeElement.innerHTML = (positive)
+  } else if (cant < 0) {
+    negative = negative + cant;
+    expensesElement.innerHTML = (negative)
+  };
+  total = positive + negative + "€";
+  totalElement.innerHTML = (total)
 };
 
 // añadir listener al evento click del botón
 buttonElement.addEventListener("click", (event) => {
   event.preventDefault();
-  // accedemos al DOM para buscar el input
   const inputConcept = document.querySelector('#concept');
   const inputQuantity = document.querySelector("#quantity");
   // guardamos el valor en localStorage
@@ -65,7 +64,3 @@ buttonElement.addEventListener("click", (event) => {
 //  event.preventDefault();
 
 //})
-
-//Mostrar ingresos y gastos
-
-//Mostar suma de ingresos y gastos
