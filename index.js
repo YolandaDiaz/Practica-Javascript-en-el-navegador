@@ -1,5 +1,5 @@
 
-let buttonCounter = 0
+let buttonCounter = 0;
 const buttonElement = document.querySelector('#addtrans');
 const buttonRemover = document.querySelector(`#remover${buttonCounter}`);
 let expendListElement = document.querySelector('#register');
@@ -12,18 +12,13 @@ let negative = 0;
 let total = 0;
 
 function saveRegister(expense) {
-  //crear la info
-  let expenseElement = ` ${expense.concept} ${expense.quantity} 
+  let expenseElement = ` ${expense.concept} --------> ${expense.quantity} €
   <button class="buttonRemove" onclick="removeClicked(${buttonCounter})">❌</button> `;
-  //crear la tag
   let expenseTag = document.createElement("p");
-  //añadir id al párrafo
   expenseTag.setAttribute("id", `${buttonCounter}`);
-  //meter info en tag
   expenseTag.innerHTML = expenseElement;
-  //metar tag en el nodo de html
   expendListElement.appendChild(expenseTag);
-}
+};
 
 function saveEntry(expense) {
   let cant = parseFloat(expense.quantity);
@@ -39,9 +34,6 @@ function saveEntry(expense) {
 };
 
 function deleteEntry(x) {
-//buscar la cant borrada
-//let prueba = listRegister.id === x
-//si es + restarla de income, si es negativa, sumarla a expenses
   for (let index = 0; index < listRegister.length; index ++) {
     if (listRegister[index].id === x) {
       let cantRem = listRegister[index].quantity;
@@ -64,28 +56,21 @@ function removeClicked(x) {
   deleteEntry(x);
 }; 
 
-// añadir listener al evento click del botón
 buttonElement.addEventListener("click", (event) => {
   event.preventDefault();
   buttonCounter ++;
   const inputConcept = document.querySelector('#concept');
   const inputQuantity = document.querySelector("#quantity");
-  // guardamos el valor en localStorage
-  //localStorage.setItem("savedText", inputConcept.value);
-  //localStorage.setItem("savedCant", inputQuantity.value);
   let expense = {
     concept: inputConcept.value,
     quantity: parseFloat(inputQuantity.value),
     id: buttonCounter,
   };
-  listRegister.push (expense);
-  // ejecutar la función que guarda los datos en el historial
-  saveRegister(expense);
 
-  //Ejecutar la función que suma un ingreso o un gasto
+  listRegister.push (expense);
+  saveRegister(expense);
   saveEntry(expense);
 
-  // borrar lo que hay escrito en el input
   inputConcept.value = "";
   inputQuantity.value = "";
 });
