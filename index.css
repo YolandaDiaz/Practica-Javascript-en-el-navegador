@@ -1,0 +1,130 @@
+body {
+    background-color: #ab8ee2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+h2 {
+    font-size: 25px;
+    margin: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    border-bottom: 2px solid rgb(236, 224, 248);
+    padding-bottom: 5px;
+    margin: 10px; 
+}
+
+.info {
+    font-size: 12px;
+    text-align: center;
+}
+
+.ahorro {
+    width: 60%;
+    border: 5px solid rgb(57, 8, 117);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size-adjust: 80%;
+    background: linear-gradient(90deg, rgb(223, 124, 223, 0.3), rgb(128, 0, 128, 0.3) ) ;
+}
+
+#total {
+    font-size: 40px;
+    text-align: center;
+}
+
+.summary {
+    display: flexbox;
+    justify-content: space-around;
+    border: 3px solid rgb(236, 224, 248);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 60%;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    background: linear-gradient(90deg, rgba(32, 131, 23, 0.808), rgba(192, 51, 26, 0.3) ) ;
+}
+
+.historical {
+    display: flexbox;
+    justify-content: space-between;
+    border: 3px solid rgb(236, 224, 248);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 60%;
+    align-items: center;
+    list-style: none;
+    font-size: 14px;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(167, 145, 189);
+}
+
+.transaction {
+    display: flexbox;
+    justify-content: space-between;
+    border: 3px solid rgb(236, 224, 248);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 60%;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(167, 145, 189);
+}
+
+#income{
+    color: rgb(45, 122, 45);
+}
+
+#expenses {
+    color: rgb(160, 40, 40);
+}
+
+.InputForm {
+    border: 1px solid  rgb(236, 224, 248);
+    border-radius: 10px;
+    display: flexbox;
+    font-size: 12px;
+    padding: 5px;
+    width: 100%; 
+    background-color: rgb(210, 231, 238);
+    box-shadow: var(--box-shadow);
+}
+
+#addtrans{
+    background: rgb(136, 78, 194);
+    margin-top: 1rem;
+    padding: 2px;
+    color: solid rgb(57, 8, 117);
+    font-size: 14px;
+    position: relative;
+    border-radius: 8px;
+    width: 35%;
+}
+
+.buttonRemove {
+    background: rgb(136, 78, 194);
+    padding: 2px;
+    position: relative;
+    border-radius: 8px; 
+ }
+

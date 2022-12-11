@@ -12,41 +12,41 @@
     <header>
         <h1>Control De Gastos</h1>
     </header>
-    <div>
-    <h2>TU AHORRO:</h2>
-    <section id="total">0 €</section>
+    <div class="ahorro">
+        <h2>TU AHORRO:</h2>
+        <section id="total">0 €</section>
     </div>
-    <div>
+    <div class="summary">
         <div>
-        <ol>Ingresos</ol>
-        <section id="income">0</section>
+            <ol>Ingresos</ol>
+            <section id="income">0</section>
         </div>
         <div>
-        <ol>Gastos</ol>
-        <section id="expenses">0</section>
+            <ol>Gastos</ol>
+            <section id="expenses">0</section>
         </div>
     </div>
+    <section class="historical">
+        <h3>Historial</h3>
+        <section id="register">
 
-    <h3>Historial</h3>
-    <hr>
-    <section id="register">
-
+        </section>
     </section>
-    
-    <h3>Añadir nueva transacción</h3>
-    <hr>
-    <form  novalidate>
-        <br class="InputForm">
-            <label for="concept" class="formTag">Concepto</label>
-            <input id="concept" name="concept" type="text" placeholder="Añade el concepto..." required/>
-        </br>
-        <br class="InputForm">
-            <label for="quantity" class="formTag" >Cantidad</label>
-            <input id="quantity" name="quantity" type="number" step="0.01" placeholder="Introduce una cantidad positiva para ingresos o negativa pra gastos" required/>
-        </br><br>
-        <button id="addtrans" type="submit">Añadir transacción</button>
-    </form>
-    <script src="./index.js"></script>
-    
+    <section class="transaction">
+        <h3>Añadir nueva transacción</h3>
+        <form  novalidate>
+            <br class="InputForm">
+                <label for="concept" class="formTag">Concepto</label>
+                <input id="concept" name="concept" type="text" placeholder="Añade el concepto...">
+            </br>
+            <br class="InputForm">
+                <label for="quantity" class="formTag" >Cantidad</label>
+                <div class="info">(Positivo para ingresos o negativo para gastos)</div>
+                <input id="quantity" name="quantity" type="number" step="0.01" placeholder="Introduce una cantidad">
+            </br><br>
+            <button id="addtrans" type="submit">Añadir transacción</button>
+        </form>
+    </section>
+    <script src="./index.js"></script>  
 </body>
 </html>
